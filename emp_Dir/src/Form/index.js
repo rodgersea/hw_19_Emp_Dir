@@ -10,16 +10,13 @@ let i;
 for (i=0; i < emp_Based.length; i++) {
   emp_Based[i].name = emp_Based[i].name.title + ' ' + emp_Based[i].name.first + ' ' + emp_Based[i].name.last;
   emp_Based[i].name1 = emp_Based[i].name.toLowerCase();
-  console.log(emp_Based[i].name1);
 };
-// emp_Based = emp_Based.results;
-console.log('emp_Based', emp_Based);
 
 class Form extends Component {
   // Setting the component's initial state
   state = {
     emp_Filter: "",
-    emp_Basee: emp_Based
+    emp_Final: emp_Based
   };
    
   handleInputChange = event => {
@@ -33,7 +30,7 @@ class Form extends Component {
 
   handleFilter = hold => {
     this.setState({
-      emp_Basee: emp_Based.filter(x => x.name1.includes(hold))
+      emp_Final: emp_Based.filter(x => x.name1.includes(hold))
     })
   }
 
@@ -50,7 +47,7 @@ class Form extends Component {
             placeholder="Filter"
           />
         </form>
-        {this.state.emp_Basee.map(employee => (
+        {this.state.emp_Final.map(employee => (
           <EmployeeCard
             key={employee.registered.date}
             name={employee.name}
