@@ -33,7 +33,7 @@ class Form extends Component {
   // state change from form input, filter employee data
   handleFilter = hold => {
     this.setState({
-      emp_Final: emp_Based.filter(x => x.name1.includes(hold))
+      emp_Final: emp_Based.filter(x => x.name1.includes(hold.toLowerCase()))
     })
   }
 
