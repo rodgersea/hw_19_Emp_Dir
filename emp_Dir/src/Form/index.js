@@ -5,6 +5,7 @@ import Wrapper from "../components/Wrapper.js";
 import Header from "../components/Header.js";
 import EmployeeCard from "../components/EmployeeCard.js";
 
+// condense the name object within employees.json into one string
 let emp_Based = emp_Base.results;
 let i;
 for (i=0; i < emp_Based.length; i++) {
@@ -19,6 +20,7 @@ class Form extends Component {
     emp_Final: emp_Based
   };
    
+  // state change from form input, render form value
   handleInputChange = event => {
     const { name, value } = event.target;
     // Updating the input's state
@@ -28,6 +30,7 @@ class Form extends Component {
     this.handleFilter(value);
   };
 
+  // state change from form input, filter employee data
   handleFilter = hold => {
     this.setState({
       emp_Final: emp_Based.filter(x => x.name1.includes(hold))
@@ -47,6 +50,7 @@ class Form extends Component {
             placeholder="Filter"
           />
         </form>
+        {/* iterate through employees */}
         {this.state.emp_Final.map(employee => (
           <EmployeeCard
             key={employee.registered.date}
