@@ -1,27 +1,41 @@
 import React, { Component } from "react";
 import "./style.css";
-import emp_Base from "./../../public/employees.json";
-import Wrapper from "./components/Wrapper";
-import Header from "./components/Header";
-import EmployeeCard from ".components.EmployeeCard";
+import emp_Base from "../utils/employees.json";
+import Wrapper from "../components/Wrapper.js";
+import Header from "../components/Header.js";
+import EmployeeCard from "../components/EmployeeCard.js";
+
+let emp_Based = emp_Base.results;
+let i;
+for (i=0; i < emp_Based.length; i++) {
+  emp_Based[i].name = emp_Based[i].name.title + ' ' + emp_Based[i].name.first + ' ' + emp_Based[i].name.last;
+  emp_Based[i].name1 = emp_Based[i].name.toLowerCase();
+  console.log(emp_Based[i].name1);
+};
+// emp_Based = emp_Based.results;
+console.log('emp_Based', emp_Based);
 
 class Form extends Component {
   // Setting the component's initial state
   state = {
     emp_Filter: "",
-    emp_Base
+    emp_Basee: emp_Based
   };
    
   handleInputChange = event => {
-    // Getting the value and name of the input which triggered the change
     const { name, value } = event.target;
-    const emp_Base = this.state.emp_Base.filter(employee => (employee.name.title + ' ' + employee.name.first + ' ' + employee.name.last).includes(this.value))
     // Updating the input's state
     this.setState({
-      [name]: value,
-      emp_Base
+      [name]: value
     });
+    this.handleFilter(value);
   };
+
+  handleFilter = hold => {
+    this.setState({
+      emp_Basee: emp_Based.filter(x => x.name1.includes(hold))
+    })
+  }
 
   render() {
     return (
@@ -30,15 +44,16 @@ class Form extends Component {
         <form className="form">
           <input
             value={this.state.emp_Filter}
-            name="filter"
+            name="emp_Filter"
             onChange={this.handleInputChange}
             type="text"
             placeholder="Filter"
           />
         </form>
-        {this.state.emp_Base.map(employee => (
+        {this.state.emp_Basee.map(employee => (
           <EmployeeCard
-            name={employee.name.title + ' ' + employee.name.first + ' ' + employee.name.last}
+            key={employee.registered.date}
+            name={employee.name}
             email={employee.email}
             country={employee.location.country}
             picture={employee.picture.thumbnail}
