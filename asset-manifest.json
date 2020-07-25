@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/rodgersea/hw_19_Emp_Dir/static/css/main.6dc0ac20.chunk.css",
+    "main.js": "/rodgersea/hw_19_Emp_Dir/static/js/main.f89f9d88.chunk.js",
+    "main.js.map": "/rodgersea/hw_19_Emp_Dir/static/js/main.f89f9d88.chunk.js.map",
+    "runtime-main.js": "/rodgersea/hw_19_Emp_Dir/static/js/runtime-main.35526f90.js",
+    "runtime-main.js.map": "/rodgersea/hw_19_Emp_Dir/static/js/runtime-main.35526f90.js.map",
+    "static/js/2.403131ee.chunk.js": "/rodgersea/hw_19_Emp_Dir/static/js/2.403131ee.chunk.js",
+    "static/js/2.403131ee.chunk.js.map": "/rodgersea/hw_19_Emp_Dir/static/js/2.403131ee.chunk.js.map",
+    "index.html": "/rodgersea/hw_19_Emp_Dir/index.html",
+    "precache-manifest.7c44f4e8acd05785852e5faa7cba2df6.js": "/rodgersea/hw_19_Emp_Dir/precache-manifest.7c44f4e8acd05785852e5faa7cba2df6.js",
+    "service-worker.js": "/rodgersea/hw_19_Emp_Dir/service-worker.js",
+    "static/css/main.6dc0ac20.chunk.css.map": "/rodgersea/hw_19_Emp_Dir/static/css/main.6dc0ac20.chunk.css.map",
+    "static/js/2.403131ee.chunk.js.LICENSE.txt": "/rodgersea/hw_19_Emp_Dir/static/js/2.403131ee.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.35526f90.js",
+    "static/js/2.403131ee.chunk.js",
+    "static/css/main.6dc0ac20.chunk.css",
+    "static/js/main.f89f9d88.chunk.js"
+  ]
+}
